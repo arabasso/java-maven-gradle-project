@@ -1,0 +1,30 @@
+apply plugin: 'application'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group = 'sk.host.arabasso'
+version = '1.0'
+description = 'Java Maven/Gradle Project'
+
+mainClassName = 'sk.host.arabasso.Application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+	baseName = 'java-maven-gradle-project'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
